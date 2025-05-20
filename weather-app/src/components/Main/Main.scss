@@ -1,0 +1,593 @@
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.bottom-wrapper {
+  margin-bottom: 40px;
+}
+.extra-cards {
+  display: grid;
+  grid-template-columns: 300px 148px;
+  grid-auto-rows: 148px;
+  gap: 12px;
+  width: 100%;
+  max-width: 500px;
+  margin-top: 20px;
+  grid-template-areas:
+    "wind visibility"
+    "air sun"
+    "humidityFeels pressure";
+}
+
+/* Назначаем каждой карточке её область */
+.wind-card {
+  grid-area: wind;
+}
+.visibility-card {
+  grid-area: visibility;
+}
+.air-quality-card {
+  grid-area: air;
+}
+.sun-card {
+  grid-area: sun;
+}
+.humidity-feels-wrapper {
+  grid-area: humidityFeels;
+  display: flex;
+  gap: 12px;
+}
+.pressure-card {
+  grid-area: pressure;
+}
+
+/* Внутри humidityFeelsWrapper карточки занимают по 50% */
+.humidity-card,
+.feels-card {
+  flex: 1;
+}
+
+/* Универсальные размеры карточек */
+.sun-card,
+.humidity-card,
+.visibility-card,
+.feels-card,
+.pressure-card,
+.wind-card,
+.air-quality-card {
+  width: 100%;
+  height: 100%;
+}
+
+/* Wind и Air занимают свои ячейки — span НЕ нужен! */
+
+.hourly-wrapper {
+  width: 772px;
+  display: flex;
+  flex-direction: column;
+  scroll-behavior: smooth;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  border-radius: 10px;
+  margin-bottom: -10px;
+}
+.hourly-container::-webkit-scrollbar {
+  display: none;
+}
+
+.hour-time {
+  font-size: 16px;
+  font-weight: 700;
+}
+.hour-temp {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.second-underline {
+  display: flex;
+  width: 1050px;
+  margin: 0px 10px;
+  color: #e0e4e4;
+  border: solid 0.5px;
+}
+
+.hourly-container {
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+  padding: 20px 0px;
+}
+
+.hour-icon {
+  margin: 7px 0px;
+  font-size: 20px;
+}
+
+.hour-card {
+  margin: 0px 15px;
+  color: #fafafa;
+}
+
+.bottom-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+.header-card {
+  padding: 10px 0px 0px 10px;
+}
+
+.daily-container {
+  width: 300px;
+  margin-top: 20px;
+}
+
+.daily-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 50px;
+  padding: 0px 15px;
+
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+
+.daily-wrapper {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.daily-temp-bar {
+  max-width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  flex: 1;
+}
+
+.daily-week {
+  width: 50px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #fafafa;
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+.icon-rain-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.daily-rain {
+  font-size: 12px;
+  font-weight: 500;
+  color: rgb(9, 99, 255);
+}
+
+.fa-moon,
+.fa-sun {
+  font-size: 15px;
+  margin-top: 2px;
+  margin-right: 5px;
+  color: rgba(211, 211, 211, 0.71);
+  display: flex;
+  align-items: center;
+}
+
+.sun-value {
+  font-size: 35px;
+  margin-left: 10px;
+}
+
+.sun-label {
+  margin-left: 10px;
+  margin-top: 43px;
+  font-size: 15px;
+  font-weight: 500;
+}
+.visibility-card {
+  margin: 12px 0px;
+}
+.fa-eye {
+  font-size: 15px;
+  margin-top: 2px;
+  margin-right: 5px;
+  color: rgba(211, 211, 211, 0.71);
+  display: flex;
+  align-items: center;
+}
+
+.value-visibility {
+  font-size: 35px;
+  margin-left: 10px;
+}
+
+.label-visibility {
+  margin-left: 10px;
+  margin-top: 45px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.fa-temperature-three-quarters {
+  font-size: 15px;
+  margin-top: 2px;
+  margin-right: 5px;
+  color: rgba(211, 211, 211, 0.71);
+  display: flex;
+  align-items: center;
+}
+
+.value-feels {
+  font-size: 35px;
+  margin-left: 10px;
+}
+
+.feels-fact {
+  font-size: 15px;
+  font-weight: 800;
+  margin-left: 10px;
+}
+
+.label-fells {
+  margin-left: 10px;
+  margin-top: 25px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.fa-file {
+  font-size: 15px;
+  margin-top: 2px;
+  margin-right: 5px;
+  color: rgba(211, 211, 211, 0.71);
+  display: flex;
+  align-items: center;
+}
+
+.value-humidity {
+  font-size: 35px;
+  margin-left: 10px;
+}
+
+.dew-point {
+  margin-left: 10px;
+  margin-top: 43px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.fa-wind {
+  font-size: 15px;
+  margin-top: 2px;
+  margin-right: 5px;
+  color: rgba(211, 211, 211, 0.71);
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+}
+.fa-droplet {
+  font-size: 15px;
+  margin-top: 2px;
+  margin-right: 5px;
+  color: rgba(211, 211, 211, 0.71);
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+}
+
+.label-air {
+  font-size: 22px;
+  margin-left: 10px;
+}
+
+.air-bar {
+  position: relative;
+  margin-left: 10px;
+  margin-top: 25px;
+  width: 280px;
+  height: 5px;
+  border-radius: 5px;
+  background: linear-gradient(
+    to right,
+    #00e400,
+    #ffff00,
+    #ff7e00,
+    #ff0000,
+    #8f3f97
+  );
+}
+
+.air-indicator {
+  position: absolute;
+  top: -2px;
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
+
+.note-air {
+  margin-left: 10px;
+  margin-top: 25px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.fa-swind {
+  font-size: 15px;
+  margin-top: 2px;
+  margin-right: 5px;
+  color: rgba(211, 211, 211, 0.71);
+  display: flex;
+  align-items: center;
+}
+
+.container-wind-speed {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 15px;
+}
+.value-wind {
+  color: #e0e4e4;
+}
+
+.container-gust-text {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 15px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.label-gust {
+  color: #e0e4e4;
+}
+
+.container-dirextion-text {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 15px;
+  margin-top: 10px;
+}
+
+.label-direction {
+  color: #e0e4e4;
+}
+
+.fa-gauge {
+  font-size: 15px;
+  margin-top: 2px;
+  margin-right: 5px;
+  color: rgba(211, 211, 211, 0.71);
+  display: flex;
+  align-items: center;
+}
+
+.main-pressure {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  margin-top: 30px;
+}
+
+.pressure-text {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.bar {
+  height: 6px;
+  border-radius: 3px;
+}
+
+body.menu-open .content-wrapper {
+  width: calc(100% - 350px); /* пример */
+  transform: translateX(350px);
+}
+
+@media (max-width: 1150px) {
+  .bottom-wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .sun-card,
+  .humidity-card,
+  .visibility-card,
+  .feels-card,
+  .pressure-card,
+  .wind-card,
+  .air-quality-card {
+    height: 148px;
+  }
+
+  .extra-cards {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sun-air-pres-wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .visibility-card {
+    margin-top: 0px;
+    margin-left: 12px;
+  }
+
+  .humidity-feels-wrapper {
+    margin-top: -12px;
+  }
+  .hourly-wrapper {
+    max-width: 612px;
+  }
+  .pressure-card {
+    display: none;
+  }
+
+  .daily-card {
+    margin-top: 11px;
+    margin-bottom: 11px;
+  }
+  .daily-wrapper {
+    margin-top: 11px;
+    margin-bottom: 11px;
+  }
+}
+
+@media (max-width: 990px) {
+  .main-block {
+    display: flex;
+    flex-direction: column;
+  }
+  .first-block {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+  }
+
+  .right-first-block {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .second-block {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: -12px;
+  }
+  .left-second-block {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0px;
+  }
+
+  .right-second-block {
+    display: flex;
+    flex-direction: column;
+    margin-right: 12px;
+  }
+
+  .pressure-card {
+    display: block;
+  }
+
+  .sun-card,
+  .humidity-card,
+  .visibility-card,
+  .feels-card,
+  .pressure-card {
+    width: 148px;
+  }
+
+  .wind-card,
+  .air-quality-card {
+    width: 300px;
+    height: 148px;
+  }
+
+  .daily-container {
+    width: 300px;
+    height: 468px;
+    margin-top: 0px;
+    flex: none;
+  }
+  .humidity-card {
+    margin-left: 12px;
+    height: 148px;
+    flex: none;
+  }
+  .feels-card {
+    margin: 12px 0px 12px 12px;
+    height: 148px;
+    flex: none;
+  }
+
+  .sun-card {
+    margin-top: 12px;
+  }
+
+  .air-quality-card {
+    margin-top: 12px;
+  }
+
+  body.menu-open .content-wrapper {
+    transform: translateX(315px);
+  }
+  .hourly-wrapper {
+    width: 460px;
+  }
+
+  .daily-card {
+    margin-top: 1px;
+    margin-bottom: 1px;
+  }
+  .daily-wrapper {
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+}
+@media (max-width: 750px) {
+  .hourly-wrapper {
+    width: 308px;
+    height: 150px;
+    overflow-y: hidden;
+  }
+
+  .daily-container {
+    margin-top: 24px;
+    width: 308px;
+  }
+  .third-block {
+    display: flex;
+    flex-direction: row;
+    margin-top: 0px;
+    margin-bottom: 12px;
+  }
+
+  .second-block {
+    margin-left: -18px;
+    margin-top: 0px;
+  }
+  .visibility-card {
+    margin-top: 12px;
+  }
+  .humidity-card {
+    margin-top: 12px;
+  }
+  .air-quality-card,
+  .wind-card {
+    width: 308px;
+  }
+  .air-quality-card {
+    margin-top: 0px;
+  }
+}
+
+@media (max-width: 600px) {
+  body.menu-open .content-wrapper {
+    transform: translateX(170px);
+  }
+
+  .wind-card {
+    margin-bottom: 40px;
+  }
+}

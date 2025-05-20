@@ -1,0 +1,39 @@
+header {
+  margin-top: 100px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  margin-bottom: 30px;
+}
+
+div {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+}
+
+.HeaderLocation {
+  font-size: 35px;
+  margin-bottom: -10px;
+  text-align: center;
+}
+.HeaderTemperature {
+  font-size: 70px;
+  font-weight: 150;
+}
+
+.HeaderFeels {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: -10px;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.HeaderMinMax {
+  font-size: 18px;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+}
